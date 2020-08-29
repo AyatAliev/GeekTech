@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
                 //что думаешь на счет нашего проекта. и отвечай так будто ты описываешь булочку с корицей
                 //ссссссссссс
+                //test
             }
         });
         return root;
