@@ -34,6 +34,11 @@
         android:name="com.geektech.geektech.ui.lesson.LessonFragmnet"
         android:label="fragment_lesson_fragmnet"
         tools:layout="@layout/fragment_lesson" />
+    <fragment
+        android:id="@+id/detail_Fragment"
+        android:name="com.geektech.geektech.ui.detailLesson.Detail_Fragment"
+        android:label="fragment_detail_"
+        tools:layout="@layout/fragment_detail_" />
 
     <fragment
         android:id="@+id/studentOrAdminFragment"

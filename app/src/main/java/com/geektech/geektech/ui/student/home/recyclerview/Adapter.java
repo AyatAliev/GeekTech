@@ -22,6 +22,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
 
     public Adapter(OnClickHolder onClickHolder) {
         this.onClickHolder = onClickHolder;
+        Group g = new Group();
+        g.setTitle("ayat");
+        list.add(g);
     }
 
     public void update(Group group) {

@@ -11,12 +11,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.geektech.geektech.R;
+import com.geektech.geektech.ui.lesson.OnClick;
 import com.geektech.geektech.ui.model.Lesson;
 
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
+    OnClick onClick;
     private ArrayList<Lesson> list = new ArrayList<>();
+
+    public Adapter(OnClick onClick) {
+        this.onClick = onClick;
+        Lesson lesson = new Lesson();
+        lesson.setTitle("ayat");
+        lesson.setDesc("aliev");
+        list.add(lesson);
+    }
 
     public void update(Lesson lesson){
         list.add(lesson);
@@ -53,10 +63,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
             imageView = itemView.findViewById(R.id.item_image_view);
         }
 
-        public void onBind(Lesson lesson){
+        public void onBind(final Lesson lesson){
             title.setText(lesson.getTitle());
             desc.setText(lesson.getDesc());
             Glide.with(itemView).load(lesson.getUri()).into(imageView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onClick.click(getAdapterPosition(),lesson);
+                }
+            });
         }
     }
 }
