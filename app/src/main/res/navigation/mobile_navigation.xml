@@ -40,5 +40,15 @@
         android:name="com.geektech.geektech.authorization.StudentOrAdminFragment"
         android:label="fragment_student_or_admin"
         tools:layout="@layout/fragment_student_or_admin" />
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.geektech.geektech.ui.admin.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.geektech.geektech.ui.admin.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

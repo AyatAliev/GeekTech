@@ -7,6 +7,12 @@ import java.io.Serializable;
 public class Group implements Serializable {
     private Uri imageView;
 
+    public Group() { }
+
+    public Group(String title) {
+        this.title = title;
+    }
+
     public Uri getImageView() {
         return imageView;
     }
