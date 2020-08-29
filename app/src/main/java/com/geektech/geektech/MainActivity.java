@@ -2,10 +2,13 @@ package com.geektech.geektech;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.geektech.geektech.authorization.PhoneActivity;
 import com.geektech.geektech.preferenceHelper.PreferenceHelper;
+import com.geektech.geektech.variable_constants.User;
 import com.geektech.geektech.оnBoard.OnBoardActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,21 +29,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        firebase();
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        BottomNavigationView navView;
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+
+        if (PreferenceHelper.getInstance(this).user().equals(User.STUDENT.name())){
+            navView = findViewById(R.id.nav_view_student);
+            navView.setVisibility(View.VISIBLE);
+            Log.e("ololo", "onCreate: " + "navController wor king 0");
+        } else if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name())) {
+            navView = findViewById(R.id.nav_view_admin);
+            Log.e("ololo", "onCreate: " + "navController wor king 1");
+            navView.setVisibility(View.VISIBLE);
+        } else {
+            navView = findViewById(R.id.nav_view_admin);
+            Log.e("ololo", "onCreate: " + "navController wor king else");
+        }
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        firebase();
-
+        if(PreferenceHelper.getInstance(this).user().equals(User.NO_USER.name()))
+            navController.navigate(R.id.studentOrAdminFragment);
     }
 
     private void firebase() {

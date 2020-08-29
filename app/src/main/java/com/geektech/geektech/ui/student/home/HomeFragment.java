@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.home;
+package com.geektech.geektech.ui.student.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.geektech.geektech.R;
-import com.geektech.geektech.ui.home.recyclerview.Adapter;
+import com.geektech.geektech.ui.student.home.recyclerview.Adapter;
 import com.geektech.geektech.ui.model.Group;
 
 public class HomeFragment extends Fragment implements OnClickHolder {

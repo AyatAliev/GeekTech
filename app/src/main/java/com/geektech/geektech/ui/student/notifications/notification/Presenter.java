@@ -1,9 +1,9 @@
-package com.geektech.geektech.ui.notifications.notification;
+package com.geektech.geektech.ui.student.notifications.notification;
 
 import android.os.Bundle;
 
 
-import static com.geektech.geektech.Const.KEY_EDIT_FRAGMENT_ARGUMENTS;
+import static com.geektech.geektech.variable_constants.Const.KEY_EDIT_FRAGMENT_ARGUMENTS;
 
 public class Presenter implements Contract.Presenter {
     private Contract.View mView;

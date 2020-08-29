@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.geektech.geektech.ui.home.HomeFragment"
+        android:name="com.geektech.geektech.ui.student.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.geektech.geektech.ui.dashboard.DashboardFragment"
+        android:name="com.geektech.geektech.ui.student.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.geektech.geektech.ui.notifications.notification.NotificationsFragment"
+        android:name="com.geektech.geektech.ui.student.notifications.notification.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/editFragment"
-        android:name="com.geektech.geektech.ui.notifications.fragments.EditFragment"
+        android:name="com.geektech.geektech.ui.student.notifications.fragments.EditFragment"
         android:label="fragment_edit"
         tools:layout="@layout/fragment_edit" />
 
@@ -34,5 +34,11 @@
         android:name="com.geektech.geektech.ui.lesson.LessonFragmnet"
         android:label="fragment_lesson_fragmnet"
         tools:layout="@layout/fragment_lesson" />
+
+    <fragment
+        android:id="@+id/studentOrAdminFragment"
+        android:name="com.geektech.geektech.authorization.StudentOrAdminFragment"
+        android:label="fragment_student_or_admin"
+        tools:layout="@layout/fragment_student_or_admin" />
 
 </navigation>

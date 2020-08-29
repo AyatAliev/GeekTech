@@ -52,7 +52,7 @@ public class OnBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PreferenceHelper.getInstance(OnBoardActivity.this).setIsShow();
-                startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
+                //startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
                 finish();
             }
         });
@@ -79,7 +79,7 @@ public class OnBoardActivity extends AppCompatActivity {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
         } else {
             PreferenceHelper.getInstance(OnBoardActivity.this).setIsShow();
-            startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
+            //startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
             finish();
         }
     }

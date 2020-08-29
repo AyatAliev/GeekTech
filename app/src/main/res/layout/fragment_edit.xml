@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     android:orientation="vertical"
-    tools:context=".ui.notifications.fragments.EditFragment">
+    tools:context=".ui.student.notifications.fragments.EditFragment">
 
     <EditText
         android:id="@+id/edit_text"

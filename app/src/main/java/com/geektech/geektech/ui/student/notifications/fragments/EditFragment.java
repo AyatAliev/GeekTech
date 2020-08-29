@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.notifications.fragments;
+package com.geektech.geektech.ui.student.notifications.fragments;
 
 import android.os.Bundle;
 

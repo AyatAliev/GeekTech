@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.notifications.notification;
+package com.geektech.geektech.ui.student.notifications.notification;
 
 import android.os.Bundle;
 

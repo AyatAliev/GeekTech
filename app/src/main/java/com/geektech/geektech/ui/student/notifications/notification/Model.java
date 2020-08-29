@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.notifications.notification;
+package com.geektech.geektech.ui.student.notifications.notification;
 
 public class Model implements Contract.Model {
     @Override

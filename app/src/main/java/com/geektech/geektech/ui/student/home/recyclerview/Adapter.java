@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.home.recyclerview;
+package com.geektech.geektech.ui.student.home.recyclerview;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.geektech.geektech.R;
-import com.geektech.geektech.ui.home.OnClickHolder;
+import com.geektech.geektech.ui.student.home.OnClickHolder;
 import com.geektech.geektech.ui.model.Group;
 
 import java.util.ArrayList;

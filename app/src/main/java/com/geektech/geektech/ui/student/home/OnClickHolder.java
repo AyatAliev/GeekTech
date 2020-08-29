@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.home;
+package com.geektech.geektech.ui.student.home;
 
 
 import com.geektech.geektech.ui.model.Group;

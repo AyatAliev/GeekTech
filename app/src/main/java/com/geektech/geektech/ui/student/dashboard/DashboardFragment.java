@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.dashboard;
+package com.geektech.geektech.ui.student.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
