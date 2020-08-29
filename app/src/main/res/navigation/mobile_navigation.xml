@@ -29,4 +29,10 @@
         android:label="fragment_edit"
         tools:layout="@layout/fragment_edit" />
 
+    <fragment
+        android:id="@+id/lessonFragmnet"
+        android:name="com.geektech.geektech.ui.lesson.LessonFragmnet"
+        android:label="fragment_lesson_fragmnet"
+        tools:layout="@layout/fragment_lesson" />
+
 </navigation>
