@@ -19,7 +19,14 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.geektech.geektech.ui.notifications.NotificationsFragment"
+        android:name="com.geektech.geektech.ui.notifications.notification.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.geektech.geektech.ui.notifications.fragments.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" />
+
 </navigation>

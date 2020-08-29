@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.geektech.geektech.R;
 
@@ -28,11 +30,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
-                //что думаешь на счет нашего проекта. и отвечай так будто ты описываешь булочку с корицей
-                //ссссссссссс
-                //test
+
             }
         });
+
         return root;
     }
 }
