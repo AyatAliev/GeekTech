@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.level.LevelFragment">
+
+    <Button
+        android:id="@+id/oneJava"
+        android:background="@drawable/button"
+        style="@style/ButtonMainO"
+        android:text="Java 1-Алексей" />
+
+    <Button
+        style="@style/ButtonMainO"
+        android:background="@drawable/button"
+        android:text="Java 2-Роза" />
+
+    <Button
+        style="@style/ButtonMainO"
+        android:background="@drawable/button"
+        android:text="Android 1-Алтынай" />
+
+    <Button
+        style="@style/ButtonMainO"
+        android:background="@drawable/button"
+        android:text="Android 2-Данияр" />
+
+    <Button
+        style="@style/ButtonMainO"
+        android:id="@+id/threeA"
+        android:background="@drawable/button"
+        android:text="Android 3-Александр" />
+
+
+    <Button
+        style="@style/ButtonMainO"
+        android:background="@drawable/button"
+        android:text="Android 4-Эльбурс" />
+
+    <Button
+        style="@style/ButtonMainO"
+        android:background="@drawable/button"
+        android:text="Kotlin-Сергей" />
+
+
+</LinearLayout>

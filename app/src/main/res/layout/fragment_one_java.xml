@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.level.OneJavaFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/oneJava"
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 1. Введение, история Java" />
+
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 2. Типы данных и комментарии" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 3. Переменные и константы" />
+
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 4. Условные выражения" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 5. Условные конструкции if-else" />
+
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 6. Условная конструкция switch" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 8. Методы" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 9. Область видимости" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 10. Основы git" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 11. Массивы" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 12. Циклы" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+
+                android:text="Урок 13. Операторы" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

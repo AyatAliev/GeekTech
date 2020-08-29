@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.level.ThreeAndroidFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 1. Архитектура" />
+
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 2. Callbacks, Retrofit." />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 3. Экран Intro с ViewPager" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 4. Butterknife, Generics" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 5. Room/Realm. Local data" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 6. Экспресс по тестам" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 7. GoogleMaps. Works with GPS" />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 8. Local Notifications. QR code scan." />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 8. Local Notifications. QR code scan." />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 8. Local Notifications. QR code scan." />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 8. Local Notifications. QR code scan." />
+
+            <Button
+                style="@style/ButtonMain"
+                android:background="@drawable/button"
+                android:text="Урок 8. Local Notifications. QR code scan." />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

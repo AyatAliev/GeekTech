@@ -55,5 +55,26 @@
         android:name="com.geektech.geektech.ui.admin.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/oneJavaFragment"
+        android:name="com.geektech.geektech.ui.level.OneJavaFragment"
+        android:label="fragment_one_java"
+        tools:layout="@layout/fragment_one_java" />
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.geektech.geektech.ui.level.LevelFragment"
+        android:label="fragment_level"
+        tools:layout="@layout/fragment_level" />
+    <fragment
+        android:id="@+id/threeFragment"
+        android:name="com.geektech.geektech.ui.level.ThreeFragment"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three" />
+    <fragment
+        android:id="@+id/threeAndroidFragment"
+        android:name="com.geektech.geektech.ui.level.ThreeAndroidFragment"
+        android:label="fragment_three_android"
+        tools:layout="@layout/fragment_three_android" />
+
 
 </navigation>
