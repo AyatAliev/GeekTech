@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".authorization.PhoneActivity">
+
+
+    <LinearLayout
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:background="@color/colorGeekTech"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_back"
+                android:onClick="backOnBoard" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_geek_tech" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/stroke_edit_text_2dp"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="20dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="@string/log_print_bishkek"
+                android:textColor="@color/colorGeekTech"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.github.pinball83.maskededittext.MaskedEditText
+                android:id="@+id/editPhone"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_marginTop="150dp"
+                android:hint="@string/edittext_hint"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="@color/colorGeekTech"
+                android:textColorHint="@color/colorGeekTech"
+                app:mask="0*** ** ** **"
+                app:notMaskedSymbol="*" />
+
+            <Button
+                android:layout_width="292dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="onClick"
+                android:background="@color/colorGeekTech"
+                android:text="@string/enter"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:background="@color/colorGeekTech"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_back"
+                android:onClick="back" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_geek_tech" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/stroke_edit_text_2dp"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/centerText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/sms_phone"
+                android:textColor="@color/colorGeekTech"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/centerTextTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="@string/code_phone"
+                android:textColor="@color/colorGeekTech"
+                android:textSize="14sp" />
+
+
+            <com.github.pinball83.maskededittext.MaskedEditText
+                android:id="@+id/editCode"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="150dp"
+                android:hint="@string/edittext_hintf"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@color/colorGeekTech"
+                android:textColorHint="@color/colorGeekTech"
+                app:mask="** ** **" />
+
+            <Button
+                android:layout_width="292dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:background="@color/colorGeekTech"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="OnCode"
+                android:text="@string/enter"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

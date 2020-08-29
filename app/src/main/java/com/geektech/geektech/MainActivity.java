@@ -1,8 +1,13 @@
 package com.geektech.geektech;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.geektech.geektech.authorization.PhoneActivity;
+import com.geektech.geektech.preferenceHelper.PreferenceHelper;
+import com.geektech.geektech.оnBoard.OnBoardActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -25,6 +30,24 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+        firebase();
+
+    }
+
+    private void firebase() {
+        boolean isShown = PreferenceHelper.getInstance(this).isShown();
+        if (!isShown) {
+            startActivity(new Intent(this, OnBoardActivity.class));
+            finish();
+            return;
+        }
+
+        if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+            startActivity(new Intent(MainActivity.this, PhoneActivity.class));
+            finish();
+            return;
+        }
     }
 
 }

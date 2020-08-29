@@ -7,4 +7,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    //цвет курсора
+    <style name="ColoredHandleThemeForWholeApp">
+        <item name="colorAccent">@color/colorGeekTech</item>
+    </style>
+
 </resources>

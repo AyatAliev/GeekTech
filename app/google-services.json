@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "832787847299",
+    "firebase_url": "https://geektechapp.firebaseio.com",
+    "project_id": "geektechapp",
+    "storage_bucket": "geektechapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832787847299:android:619c653464e1917f5963b6",
+        "android_client_info": {
+          "package_name": "com.geektech.geektech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832787847299-bcpj5pkor5jn7q95sk99idv58b0mmr0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.geektech.geektech",
+            "certificate_hash": "13bd59e2d83bd1ae4cf28decb8e1d1f9835095e6"
+          }
+        },
+        {
+          "client_id": "832787847299-3u25ot76dh1hf16f7s6f7cacnc5nf8h1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz97Lo8Y9R-KnKwBJ17chz-LYW1RUOIVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832787847299-3u25ot76dh1hf16f7s6f7cacnc5nf8h1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,4 +3,19 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    //onBoard
+    <string name="test">test</string>
+    <string name="next">Далее</string>
+    <string name="skip">Пропустить</string>
+    <string name="start">Начать</string>
+
+    //Authorization
+    <string name="log_print_bishkek">Регистрация по номеру</string>
+    <string name="enter">ВОЙТИ</string>
+    <string name="sms_phone">Мы отправили СМС код на ваш номер телефона</string>
+    <string name="code_phone">Введите полученный код, чтобы подтвердить что это ваш номер</string>
+    <string name="edittext_hint"><font size="15">Номер телефона</font></string>
+    <string name="edittext_hintf"><font size="15">Код подтверждения</font></string>
+
 </resources>
