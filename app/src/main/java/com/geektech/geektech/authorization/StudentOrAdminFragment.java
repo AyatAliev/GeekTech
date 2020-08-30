@@ -13,10 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.geektech.geektech.MainActivity;
 import com.geektech.geektech.R;
 import com.geektech.geektech.preferenceHelper.PreferenceHelper;
 import com.geektech.geektech.presenter.App;
 import com.geektech.geektech.variable_constants.User;
+import com.geektech.geektech.оnBoard.OnBoardActivity;
 
 
 public class StudentOrAdminFragment extends Fragment {
@@ -26,7 +28,6 @@ public class StudentOrAdminFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_student_or_admin, container, false);
     }
 
@@ -37,20 +38,16 @@ public class StudentOrAdminFragment extends Fragment {
         buttonAdmin = view.findViewById(R.id.button_admin);
         final NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
 
-        buttonStudent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PreferenceHelper.getInstance(requireContext()).user(User.STUDENT.name());
-                navController.popBackStack();
-            }
+        buttonStudent.setOnClickListener(view12 -> {
+            PreferenceHelper.getInstance(requireContext()).user(User.STUDENT.name());
+            PreferenceHelper.getInstance(requireActivity()).setIsStudent();
+            navController.popBackStack();
         });
 
-        buttonAdmin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PreferenceHelper.getInstance(requireContext()).user(User.ADMIN.name());
-                navController.popBackStack();
-            }
+        buttonAdmin.setOnClickListener(view1 -> {
+            PreferenceHelper.getInstance(requireContext()).user(User.ADMIN.name());
+            PreferenceHelper.getInstance(requireActivity()).setIsStudent();
+            navController.popBackStack();
         });
     }
 }

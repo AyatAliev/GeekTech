@@ -12,7 +12,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import com.geektech.geektech.MainActivity;
 import com.geektech.geektech.R;
 import com.geektech.geektech.presenter.Toaster;
 import com.geektech.geektech.splash.Splash;
@@ -31,7 +34,7 @@ public class PhoneActivity extends AppCompatActivity {
 
     private EditText editPhone;
     private EditText editCode;
-
+    private NavController navController;
     private String verification;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks callbacks;
 
@@ -43,7 +46,6 @@ public class PhoneActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phone);
 
         centerTextView();
-
         editPhone = findViewById(R.id.editPhone);
         editCode = findViewById(R.id.editCode);
         callbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -84,15 +86,12 @@ public class PhoneActivity extends AppCompatActivity {
     }
 
     private void signIn(PhoneAuthCredential phoneAuthCredential) {
-        FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    startActivity(new Intent(PhoneActivity.this, Splash.class));
-                    finish();
-                } else {
-                    Toaster.show("");
-                }
+        FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                startActivity(new Intent(PhoneActivity.this, MainActivity.class));
+                finish();
+            } else {
+                Toaster.show("");
             }
         });
 

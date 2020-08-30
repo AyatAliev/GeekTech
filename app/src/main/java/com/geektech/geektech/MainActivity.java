@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.geektech.geektech.authorization.PhoneActivity;
+import com.geektech.geektech.authorization.StudentOrAdminFragment;
 import com.geektech.geektech.preferenceHelper.PreferenceHelper;
 import com.geektech.geektech.ui.admin.chat.form_group.FormGroupFragment;
 import com.geektech.geektech.variable_constants.User;
@@ -56,37 +57,43 @@ public class MainActivity extends AppCompatActivity {
             appBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                     .build();
-            navView.setVisibility(View.VISIBLE);
         } else if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name())) {
             navView = findViewById(R.id.nav_view_admin);
             appBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.navigation_chat, R.id.navigation_profile)
                     .build();
-            navView.setVisibility(View.VISIBLE);
             navOptions = new NavOptions.Builder()
                     .setPopUpTo(R.id.navigation_chat, true)
                     .build();
 
         } else {
-            navView = findViewById(R.id.nav_view_admin);
+            navView = findViewById(R.id.nav_view_student);
             appBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.navigation_chat, R.id.navigation_profile)
                     .build();
         }
-
+        navView.setVisibility(View.VISIBLE);
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        if (PreferenceHelper.getInstance(this).user().equals(User.NO_USER.name()))
+        if (PreferenceHelper.getInstance(this).user().equals(User.NO_USER.name())) {
             navController.navigate(R.id.studentOrAdminFragment);
+        }
+
+        if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name())) {
+            navController.navigate(R.id.navigation_chat, new Bundle(), navOptions);
+        }
 
         if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name()))
-            navController.navigate(R.id.navigation_chat, new Bundle(), navOptions);
+            navController.navigate(R.id.navigation_chat);
 
-        navController.navigate(R.id.navigation_chat);
-
+        boolean isStudent = PreferenceHelper.getInstance(this).isStudent();
+        if (isStudent) {
+            navController.navigate(R.id.studentOrAdminFragment);
+            finish();
+            return;
+        }
     }
 
     private void firebase() {
@@ -104,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
 
     @Override

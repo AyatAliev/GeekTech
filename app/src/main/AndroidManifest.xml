@@ -15,7 +15,7 @@
         android:roundIcon="@android:color/white"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.detailLesson.DetailVideoActivity"></activity>
+        <activity android:name=".ui.detailLesson.DetailVideoActivity" />
 
         <activity
             android:name=".оnBoard.OnBoardActivity"

@@ -14,6 +14,7 @@ public class PreferenceHelper {
     private SharedPreferences preferences;
     private String NAME = "setting";
     private String IS_SHOWN = "isShown";
+    private String IS_SHON = "isSown";
 
 
     public PreferenceHelper(Context context) {
@@ -31,8 +32,15 @@ public class PreferenceHelper {
         return preferences.getBoolean(IS_SHOWN, false);
     }
 
+    public boolean isStudent() {
+        return preferences.getBoolean(IS_SHON, false);
+    }
+
     public void setIsShow() {
         preferences.edit().putBoolean(IS_SHOWN, true).apply();
+    }
+    public void setIsStudent() {
+        preferences.edit().putBoolean(IS_SHON, true).apply();
     }
 
     public void user(String value) {

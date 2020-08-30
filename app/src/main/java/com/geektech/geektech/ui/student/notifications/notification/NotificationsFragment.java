@@ -46,7 +46,6 @@ public class NotificationsFragment extends Fragment implements Contract.View {
         linearLayoutEditGroup.setOnClickListener(view -> presenter.onLinearLayoutStudentGroupWasClicked());
 
         linearLayoutEditGroup.setOnClickListener(view -> presenter.onLinearLayoutStudentGroupWasClicked());
-        textView.setOnClickListener(view -> presenter.onTextViewWebViewWasClicked());
     }
 
     private void initialisation(View view) {
@@ -54,7 +53,6 @@ public class NotificationsFragment extends Fragment implements Contract.View {
         presenter = new Presenter(this);
         linearLayoutEditName = view.findViewById(R.id.linear_layout_edit_student_name);
         linearLayoutEditGroup = view.findViewById(R.id.linear_layout_edit_student_group);
-        //textView = view.findViewById(R.id.tv_test);
     }
 
     @Override

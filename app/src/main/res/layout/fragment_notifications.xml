@@ -103,7 +103,6 @@
         android:orientation="vertical"
         android:paddingStart="15dp">
 
-        Бакыт khamraev, [30.08.20 15:39]
         <TextView
             android:id="@+id/student_group"
             android:layout_width="wrap_content"
@@ -219,7 +218,6 @@
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
-        Бакыт khamraev, [30.08.20 15:39]
         <Button
             android:id="@+id/close"
             android:layout_width="wrap_content"
