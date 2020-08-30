@@ -41,6 +41,6 @@ public class LessonFragmnet extends Fragment implements OnClick{
 
     @Override
     public void click(int adapterPosition, Lesson lesson) {
-        startActivity(new Intent(getContext(), DetailVideoActivity.class));
+        startActivity(new Intent(getContext(),DetailVideoActivity.class));
     }
 }

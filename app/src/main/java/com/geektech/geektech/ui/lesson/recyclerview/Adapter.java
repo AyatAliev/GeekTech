@@ -22,10 +22,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
 
     public Adapter(OnClick onClick) {
         this.onClick = onClick;
-        Lesson lesson = new Lesson();
-        lesson.setTitle("ayat");
-        lesson.setDesc("aliev");
-        list.add(lesson);
     }
 
     public void update(Lesson lesson){
@@ -66,7 +62,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         public void onBind(final Lesson lesson){
             title.setText(lesson.getTitle());
             desc.setText(lesson.getDesc());
-            Glide.with(itemView).load(lesson.getUri()).into(imageView);
+            Glide.with(itemView.getContext()).load(lesson.getUri()).into(imageView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

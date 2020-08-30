@@ -45,7 +45,7 @@ public class NotificationsFragment extends Fragment implements Contract.View {
 
         linearLayoutEditGroup.setOnClickListener(view -> presenter.onLinearLayoutStudentGroupWasClicked());
 
-
+        linearLayoutEditGroup.setOnClickListener(view -> presenter.onLinearLayoutStudentGroupWasClicked());
         textView.setOnClickListener(view -> presenter.onTextViewWebViewWasClicked());
     }
 
