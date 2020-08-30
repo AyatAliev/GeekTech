@@ -1,65 +1,81 @@
 package com.geektech.geektech.ui.detailLesson
 
-import android.Manifest
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.app.Dialog
-import android.app.DownloadManager
-import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.util.Log
-import android.util.SparseArray
-import android.view.Window
-import android.widget.Button
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import at.huber.youtubeExtractor.VideoMeta
-import at.huber.youtubeExtractor.YouTubeExtractor
-import at.huber.youtubeExtractor.YtFile
 import com.geektech.geektech.R
 import com.geektech.geektech.ui.utils.PlayerManager
-import com.google.android.exoplayer2.ExoPlayer
-import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.*
+import com.google.android.exoplayer2.source.ExtractorMediaSource
+import com.google.android.exoplayer2.source.MediaSource
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView
-import com.lawlett.youtubeparcer.utils.*
+import com.google.android.exoplayer2.upstream.DataSource
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.android.exoplayer2.util.Util
+import com.lawlett.youtubeparcer.utils.CallBacks
+import com.lawlett.youtubeparcer.utils.YoutubeVideo
 
 
 class DetailVideoActivity : AppCompatActivity(), CallBacks {
-//    var list = mutableListOf<PlaylistItem>()
     private lateinit var player: Player
     private lateinit var playerManager: PlayerManager
+    private  var exoPlayer: SimpleExoPlayer?=null
 
     private var listOfFormatVideo = mutableListOf<YoutubeVideo>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_detail)
         setupToSubscribe()
         setupExoPlayer()
     }
 
-    companion object {
-        var myVideoId: String? = "JbA0FWst"
-        fun instanceVideoDetail(activity: Activity?, id: String?) {
-            val intent = Intent(activity, DetailVideoActivity::class.java)
-            activity?.startActivity(intent)
-            this.myVideoId = id
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        val play_view = findViewById<SimpleExoPlayerView>(R.id.player_view)
+
+        super.onConfigurationChanged(newConfig)
+        if (newConfig.orientation === Configuration.ORIENTATION_LANDSCAPE) {
+            //First Hide other objects (listview or recyclerview), better hide them using Gone.
+            val params = play_view.getLayoutParams()
+            params.width = ViewGroup.LayoutParams.MATCH_PARENT
+            params.height = ViewGroup.LayoutParams.MATCH_PARENT
+            play_view.setLayoutParams(params)
+        } else if (newConfig.orientation === Configuration.ORIENTATION_PORTRAIT) {
+            //unhide your objects here.
+            val params = play_view.getLayoutParams()
+            params.width = ViewGroup.LayoutParams.MATCH_PARENT
+            params.height = 600
+            play_view.setLayoutParams(params)
         }
     }
 
-
     private fun setupToSubscribe() {
-                getActualUrl("DOsqGqqSAYY")
-
+//                getActualUrl("DOsqGqqSAYY")
+                initExoPlayer()
         }
 
+    private fun initExoPlayer() {
+        val play_view = findViewById<SimpleExoPlayerView>(R.id.player_view)
+        exoPlayer = ExoPlayerFactory.newSimpleInstance(
+                DefaultRenderersFactory(this),
+                DefaultTrackSelector(),
+                DefaultLoadControl())
+        play_view?.player = exoPlayer
+        var dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
+                this, Util.getUserAgent
+        (this, "GeekTech"))
+        var videoSource: MediaSource = ExtractorMediaSource.Factory(dataSourceFactory)
+                .createMediaSource(Uri.parse("https://www.learningcontainer.com/bfd_download/sample-mp4-file/"))
+        exoPlayer?.prepare(videoSource,true,false)
+        exoPlayer?.playWhenReady = true
+    }
 
-    @SuppressLint("StaticFieldLeak")
+
+
+
+    /*@SuppressLint("StaticFieldLeak")
     private fun getActualUrl(url: String?) {
         object : YouTubeExtractor(this) {
             override fun onExtractionComplete(
@@ -84,13 +100,13 @@ class DetailVideoActivity : AppCompatActivity(), CallBacks {
 
         }.extract(url, true, true)
     }
-
+*/
     private fun setupExoPlayer() {
         playerManager = PlayerManager.getSharedInstance(this)
         player = playerManager.playerView.player
     }
 
-    private fun addFormatToList(ytFile: YtFile, ytFiles: SparseArray<YtFile>) {
+   /* private fun addFormatToList(ytFile: YtFile, ytFiles: SparseArray<YtFile>) {
         var height = ytFile.format.height
         if (height != -1) {
             for (video in listOfFormatVideo) {
@@ -121,7 +137,7 @@ class DetailVideoActivity : AppCompatActivity(), CallBacks {
         PlayerManager.getSharedInstance(this).playStream(url)
         PlayerManager.getSharedInstance(this).setPlayerListener(this)
 
-    }
+    }*/
 
     override fun onItemClickOnItem(albumId: Int) {
     }
