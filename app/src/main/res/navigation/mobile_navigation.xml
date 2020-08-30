@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/studentOrAdminFragment"
         android:name="com.geektech.geektech.authorization.StudentOrAdminFragment"
-        android:label="fragment_student_or_admin"
+        android:label=""
         tools:layout="@layout/fragment_student_or_admin" />
     <fragment
         android:id="@+id/navigation_chat"
