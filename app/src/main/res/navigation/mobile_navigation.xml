@@ -31,13 +31,13 @@
     <fragment
         android:id="@+id/editFragment"
         android:name="com.geektech.geektech.ui.student.notifications.fragments.EditFragment"
-        android:label="fragment_edit"
+        android:label=""
         tools:layout="@layout/fragment_edit" />
 
     <fragment
         android:id="@+id/lessonFragmnet"
         android:name="com.geektech.geektech.ui.lesson.LessonFragmnet"
-        android:label="fragment_lesson_fragmnet"
+        android:label=""
         tools:layout="@layout/fragment_lesson" />
 
 
@@ -59,13 +59,13 @@
     <fragment
         android:id="@+id/formGroupFragment"
         android:name="com.geektech.geektech.ui.admin.chat.form_group.FormGroupFragment"
-        android:label="fragment_form_group"
+        android:label=""
         tools:layout="@layout/fragment_form_group" />
 
     <fragment
         android:id="@+id/testWebViewFragment"
         android:name="com.geektech.geektech.ui.student.notifications.fragments.WebViewFragment"
-        android:label="fragment_test_web_view"
+        android:label=""
         tools:layout="@layout/fragment_test_web_view" />
 
     <fragment
@@ -76,26 +76,26 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.geektech.geektech.ui.admin.chat.SettingsLessonFragment"
-        android:label="SettingsFragment" />
+        android:label="" />
     <fragment
         android:id="@+id/oneJavaFragment"
         android:name="com.geektech.geektech.ui.level.OneJavaFragment"
-        android:label="fragment_one_java"
+        android:label=""
         tools:layout="@layout/fragment_one_java" />
     <fragment
         android:id="@+id/levelFragment"
         android:name="com.geektech.geektech.ui.level.LevelFragment"
-        android:label="fragment_level"
+        android:label=""
         tools:layout="@layout/fragment_level" />
     <fragment
         android:id="@+id/threeFragment"
         android:name="com.geektech.geektech.ui.level.ThreeFragment"
-        android:label="fragment_three"
+        android:label=""
         tools:layout="@layout/fragment_three" />
     <fragment
         android:id="@+id/threeAndroidFragment"
         android:name="com.geektech.geektech.ui.level.ThreeAndroidFragment"
-        android:label="fragment_three_android"
+        android:label=""
         tools:layout="@layout/fragment_three_android" />
     <fragment
         android:id="@+id/groupInfoFragment"
@@ -105,7 +105,7 @@
     <fragment
         android:id="@+id/formLessonFragment"
         android:name="com.geektech.geektech.ui.admin.chat.group_info.FormLessonFragment"
-        android:label="fragment_form_lesson"
+        android:label=""
         tools:layout="@layout/fragment_form_lesson" />
 
 </navigation>
