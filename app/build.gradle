@@ -80,6 +80,7 @@ dependencies {
 
     implementation 'com.github.haarigerharald:android-youtubeextractor:2.1.0'
 
+    //exoplayer
     implementation 'com.google.android.exoplayer:exoplayer:2.8.4'
 
     //FireStore

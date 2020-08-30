@@ -42,33 +42,12 @@ public class NotificationsFragment extends Fragment implements Contract.View {
     }
 
     private void setListener() {
-        linearLayoutEditName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onLinearLayoutStudentNameWasClicked();
-            }
-        });
+        linearLayoutEditName.setOnClickListener(view -> presenter.onLinearLayoutStudentNameWasClicked());
 
-        linearLayoutEditGroup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onLinearLayoutStudentGroupWasClicked();
-            }
-        });
-        linearLayoutExchange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
+        linearLayoutEditGroup.setOnClickListener(view -> presenter.onLinearLayoutStudentGroupWasClicked());
 
-            }
-        });
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onTextViewWebViewWasClicked();
-            }
-        });
+        textView.setOnClickListener(view -> presenter.onTextViewWebViewWasClicked());
     }
 
     private void initialisation(View view) {

@@ -40,6 +40,8 @@ public class GroupInfoFragment extends Fragment implements OnClick {
         adapter = new com.geektech.geektech.ui.lesson.recyclerview.Adapter(this);
         recyclerView.setAdapter(adapter);
 
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -59,7 +59,7 @@
             android:layout_marginTop="10dp"
             android:background="@android:color/white"
             android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:hint="@string/enter_group_name"
+            android:hint="@string/title_example"
             android:paddingStart="10dp"
             android:paddingTop="10dp"
             android:paddingBottom="5dp" />
@@ -72,34 +72,11 @@
             android:layout_marginTop="1dp"
             android:background="@android:color/white"
             android:drawableEnd="@drawable/ic_baseline_edit_24"
-            android:hint="@string/enter_sensei_name"
+            android:hint="@string/lesson_description_example"
             android:paddingStart="10dp"
             android:paddingTop="10dp"
             android:paddingBottom="5dp" />
 
-        <TextView
-            android:id="@+id/text_view_add_student"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="@string/students"
-            android:textAllCaps="true"
-            android:textColor="#2F3E77"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:drawableEndCompat="@drawable/ic_baseline_add_black" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_students"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:paddingStart="10dp"
-            android:paddingTop="10dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_student" />
 
         <Button
             android:id="@+id/button_save"

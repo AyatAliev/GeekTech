@@ -12,9 +12,7 @@ import com.google.android.exoplayer2.source.ExtractorMediaSource
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView
-import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.exoplayer2.util.Util
 import com.lawlett.youtubeparcer.utils.CallBacks
 import com.lawlett.youtubeparcer.utils.YoutubeVideo
 
@@ -53,8 +51,8 @@ class DetailVideoActivity : AppCompatActivity(), CallBacks {
 
     private fun setupToSubscribe() {
 //                getActualUrl("DOsqGqqSAYY")
-                initExoPlayer()
-        }
+        initExoPlayer()
+    }
 
     private fun initExoPlayer() {
         val play_view = findViewById<SimpleExoPlayerView>(R.id.player_view)
@@ -63,8 +61,8 @@ class DetailVideoActivity : AppCompatActivity(), CallBacks {
                 DefaultTrackSelector(),
                 DefaultLoadControl())
         play_view?.player = exoPlayer
-        var dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
-                this, Util.getUserAgent
+        var dataSourceFactory: com.google.android.exoplayer2.upstream.DataSource.Factory = DefaultDataSourceFactory(
+                this, com.google.android.exoplayer2.util.Util.getUserAgent
         (this, "GeekTech"))
         var videoSource: MediaSource = ExtractorMediaSource.Factory(dataSourceFactory)
                 .createMediaSource(Uri.parse("https://www.learningcontainer.com/bfd_download/sample-mp4-file/"))
