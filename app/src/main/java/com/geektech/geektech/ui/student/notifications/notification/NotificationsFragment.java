@@ -21,7 +21,6 @@ public class NotificationsFragment extends Fragment implements Contract.View {
     LinearLayout linearLayoutEditName;
     LinearLayout linearLayoutEditGroup;
     TextView textView;
-    LinearLayout linearLayoutExchange;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
