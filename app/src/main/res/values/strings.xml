@@ -138,4 +138,12 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_example">введите название урока</string>
     <string name="lesson_description_example">введте описание урока</string>
+    <string name="aa">
+
+        В этом уроке:/
+- рассмотрим взаимодействие между Activity и ее фрагментами/
+После размещения фрагмента, хотелось бы начать с ним взаимодействовать. Т.е. размещать View-компоненты и работать с ними,
+        обращаться к фрагментам из Activity и наоборот. Попробуем это реализовать.
+Для чистоты эксперимента будем работать с двумя фрагментами: статическим и динамическим.
+    </string>
 </resources>
