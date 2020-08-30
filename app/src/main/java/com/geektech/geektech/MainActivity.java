@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     BottomNavigationView navView;
     AppBarConfiguration appBarConfiguration;
-    NavOptions navOptions;
-    SearchView searchView;
+    //SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +46,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         firebase();
-        searchView = findViewById(R.id.action_search);
+        //searchView = findViewById(R.id.action_search);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        BottomNavigationView navView;
-        AppBarConfiguration appBarConfiguration;
 
         if (PreferenceHelper.getInstance(this).user().equals(User.STUDENT.name())) {
             navView = findViewById(R.id.nav_view_student);
@@ -63,9 +60,7 @@ public class MainActivity extends AppCompatActivity {
             appBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.navigation_chat, R.id.navigation_profile)
                     .build();
-            navOptions = new NavOptions.Builder()
-                    .setPopUpTo(R.id.navigation_chat, true)
-                    .build();
+
 
         } else {
             navView = findViewById(R.id.nav_view_student);
@@ -82,12 +77,9 @@ public class MainActivity extends AppCompatActivity {
             navController.navigate(R.id.studentOrAdminFragment);
         }
 
-        if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name())) {
-            navController.navigate(R.id.navigation_chat, new Bundle(), navOptions);
-        }
-
         if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name()))
             navController.navigate(R.id.navigation_chat);
+
 
         boolean isStudent = PreferenceHelper.getInstance(this).isStudent();
         if (isStudent) {

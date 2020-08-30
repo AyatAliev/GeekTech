@@ -38,15 +38,10 @@ public class NotificationsFragment extends Fragment implements Contract.View {
         open = root.findViewById(R.id.open);
         close = root.findViewById(R.id.close);
         lesson = root.findViewById(R.id.lesson);
-        final NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
 
 
-        lesson.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.levelFragment);
-            }
-        });
+        lesson.setOnClickListener(view -> navController.navigate(R.id.levelFragment));
 
         notification();
         return root;
