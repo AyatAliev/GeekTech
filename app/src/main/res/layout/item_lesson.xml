@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:padding="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/item_tv_title"
         android:layout_width="match_parent"
+        android:layout_height="20dp"
         android:layout_toRightOf="@id/item_image_view"
         android:text="lxlxl"
-        android:textStyle="bold"
-        android:layout_height="20dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/item_tv_desc"
         android:layout_width="match_parent"
-        android:layout_toRightOf="@id/item_image_view"
         android:layout_height="50dp"
-        android:text="ldld"
-        android:textStyle="italic"
         android:layout_below="@id/item_tv_title"
-        />
+        android:layout_toRightOf="@id/item_image_view"
+        android:text="ldld"
+        android:textStyle="italic" />
 
     <ImageView
         android:id="@+id/item_image_view"
         android:layout_width="80dp"
-        android:src="@drawable/ic_launcher_background"
         android:layout_height="70dp"
-        />
+        android:src="@drawable/logo_geek" />
 
 
 </RelativeLayout>

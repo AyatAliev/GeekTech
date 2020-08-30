@@ -4,8 +4,10 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.geektech.geektech.R
+import com.geektech.geektech.ui.model.Lesson
 import com.geektech.geektech.ui.utils.PlayerManager
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.source.ExtractorMediaSource
@@ -13,8 +15,12 @@ import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 import com.lawlett.youtubeparcer.utils.CallBacks
 import com.lawlett.youtubeparcer.utils.YoutubeVideo
+import java.util.*
 
 
 class DetailVideoActivity : AppCompatActivity(), CallBacks {
@@ -28,6 +34,21 @@ class DetailVideoActivity : AppCompatActivity(), CallBacks {
         setContentView(R.layout.activity_main2)
         setupToSubscribe()
         setupExoPlayer()
+
+        FirebaseFirestore
+                .getInstance()
+                .collection("lessons")
+                .get()
+                .addOnCompleteListener { task: Task<QuerySnapshot?> ->
+                    for (lesson in Objects.requireNonNull(task.result)?.toObjects(Lesson::class.java)!!) {
+                        val title = findViewById<TextView>(R.id.title)
+                        val desc = findViewById<TextView>(R.id.desc)
+                        title.text=lesson.title
+                        desc.text=lesson.desc
+
+                    }
+                }
+
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {

@@ -62,13 +62,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         public void onBind(final Lesson lesson){
             title.setText(lesson.getTitle());
             desc.setText(lesson.getDesc());
-            Glide.with(itemView.getContext()).load(lesson.getUri()).into(imageView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onClick.click(getAdapterPosition(),lesson);
-                }
-            });
+            itemView.setOnClickListener(view -> onClick.click(getAdapterPosition(),lesson));
         }
     }
 }

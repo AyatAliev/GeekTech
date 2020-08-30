@@ -16,6 +16,9 @@ import com.geektech.geektech.R;
 import com.geektech.geektech.ui.detailLesson.DetailVideoActivity;
 import com.geektech.geektech.ui.lesson.recyclerview.Adapter;
 import com.geektech.geektech.ui.model.Lesson;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Objects;
 
 public class LessonFragmnet extends Fragment implements OnClick{
 
@@ -35,6 +38,17 @@ public class LessonFragmnet extends Fragment implements OnClick{
         adapter = new Adapter(this);
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
         recyclerView.setAdapter(adapter);
+
+        FirebaseFirestore
+                .getInstance()
+                .collection("lessons")
+                .get()
+                .addOnCompleteListener(task -> {
+                    for (Lesson lesson : Objects.requireNonNull(task.getResult()).toObjects(Lesson.class)) {
+                        adapter.update(lesson);
+                    }
+                });
+
         return root;
     }
 

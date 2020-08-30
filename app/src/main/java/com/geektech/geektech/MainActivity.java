@@ -26,6 +26,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -94,6 +95,13 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (destination.getId() == R.id.navigation_network){
+                toolbar.setVisibility(View.GONE);
+            } else {
+                toolbar.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     private void firebase() {
@@ -111,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 
 
     @Override

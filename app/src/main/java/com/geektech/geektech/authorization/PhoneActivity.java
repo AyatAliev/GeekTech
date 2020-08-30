@@ -94,7 +94,6 @@ public class PhoneActivity extends AppCompatActivity {
                 Toaster.show("");
             }
         });
-
     }
 
     public void onClick(View view) {

@@ -108,9 +108,9 @@
     <string name="students">Students</string>
     <string name="topics">topics</string>
     <string name="crate_group">crate group</string>
-    <string name="title_profile">Profile</string>
-    <string name="title_chat">Groups</string>
-    <string name="network">Network</string>
+    <string name="title_profile">Профиль</string>
+    <string name="title_chat">Группы</string>
+    <string name="network">Статьи</string>
 
 
     <string-array name="tabs_network">
@@ -138,6 +138,7 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_example">введите название урока</string>
     <string name="lesson_description_example">введте описание урока</string>
+    <string name="prof">Профиль</string>
     <string name="aa">
 
         В этом уроке:/

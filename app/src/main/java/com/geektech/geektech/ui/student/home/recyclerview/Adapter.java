@@ -76,7 +76,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
             if (s.getImageUri() != null) {
                 Glide.with(itemView.getContext()).load(s.getImageUri()).into(imageView);
                 Log.e("ololo", "onBind: " + s.getImageUri() );
-
+            } else {
+                imageView.setBackgroundResource(R.drawable.logo_geek);
             }
             if (s.getTitle() != null) {
                 textView.setText(s.getTitle());
