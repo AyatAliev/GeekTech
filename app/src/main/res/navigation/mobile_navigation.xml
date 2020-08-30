@@ -22,6 +22,11 @@
         android:name="com.geektech.geektech.ui.student.notifications.notification.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_test_app"
+        android:name="com.geektech.geektech.ui.testApp.TestFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_test" />
 
     <fragment
         android:id="@+id/editFragment"

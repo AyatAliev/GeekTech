@@ -34,29 +34,26 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         BottomNavigationView navView;
-        AppBarConfiguration appBarConfiguration;
+
 
         if (PreferenceHelper.getInstance(this).user().equals(User.STUDENT.name())){
             navView = findViewById(R.id.nav_view_student);
-            appBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                    .build();
             navView.setVisibility(View.VISIBLE);
+            Log.e("ololo", "onCreate: " + "navController wor king 0");
         } else if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name())) {
             navView = findViewById(R.id.nav_view_admin);
-            appBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.navigation_chat, R.id.navigation_profile)
-                    .build();
+            Log.e("ololo", "onCreate: " + "navController wor king 1");
             navView.setVisibility(View.VISIBLE);
         } else {
             navView = findViewById(R.id.nav_view_admin);
-            appBarConfiguration = new AppBarConfiguration.Builder(
-                    R.id.navigation_chat, R.id.navigation_profile)
-                    .build();
+            Log.e("ololo", "onCreate: " + "navController wor king else");
         }
-
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                .build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 

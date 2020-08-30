@@ -1,6 +1,7 @@
 package com.geektech.geektech.ui.student.notifications.notification;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ public class NotificationsFragment extends Fragment implements Contract.View {
     Contract.Presenter presenter;
     LinearLayout linearLayoutEditName;
     LinearLayout linearLayoutEditGroup;
+    LinearLayout linearLayoutExchange;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +54,17 @@ public class NotificationsFragment extends Fragment implements Contract.View {
                 presenter.onLinearLayoutStudentGroupWasClicked();
             }
         });
+        linearLayoutExchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                GicCoinsFragment fragment = new GicCoinsFragment();
+                fragment.setArguments(bundle);
+
+                requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container_fr, fragment).addToBackStack(null).commit();
+
+            }
+        });
     }
 
     private void initialisation(View view) {
@@ -59,6 +72,7 @@ public class NotificationsFragment extends Fragment implements Contract.View {
         presenter = new Presenter(this);
         linearLayoutEditName = view.findViewById(R.id.linear_layout_edit_student_name);
         linearLayoutEditGroup = view.findViewById(R.id.linear_layout_edit_student_group);
+        linearLayoutExchange = view.findViewById(R.id.gic_exchange);
     }
 
     @Override
@@ -68,3 +82,5 @@ public class NotificationsFragment extends Fragment implements Contract.View {
 
 
 }
+
+

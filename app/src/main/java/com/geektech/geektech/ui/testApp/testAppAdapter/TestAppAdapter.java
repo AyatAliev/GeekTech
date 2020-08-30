@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.geektech.geektech.R;
+import com.geektech.geektech.presenter.Toaster;
 import com.geektech.geektech.ui.model.TestAppModels;
 
 import java.util.ArrayList;
@@ -50,6 +51,12 @@ public class TestAppAdapter extends RecyclerView.Adapter<TestAppAdapter.TestAppH
 
         public TestAppHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toaster.show("установлено)");
+                }
+            });
             imageApp = itemView.findViewById(R.id.image_cardApp);
             textName = itemView.findViewById(R.id.text_name_app);
             textDesc = itemView.findViewById(R.id.text_desc_app);

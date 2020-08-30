@@ -41,7 +41,7 @@ public class TestFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toaster.show("Добавьтек Apk file");
+                Toaster.show("Добавьте Apk file");
             }
         });
     }

@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="test_app">Приложения</string>
 
     //onBoard
     <string name="test">test</string>
@@ -80,8 +81,10 @@
     <string name="account">Account</string>
     <string name="a">Aят Алиев</string>
     <string name="click_to_change_name">click to change name</string>
-    <string name="_21">21</string>
+    <string name="gicCoins">Гикоины:</string>
+    <string name="gicCoin">За помощь:</string>
     <string name="group">group</string>
+    <string name="coin">4</string>
     <string name="lack_of_concentration">lack of concentration</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
