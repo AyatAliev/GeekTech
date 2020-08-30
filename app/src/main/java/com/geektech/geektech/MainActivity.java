@@ -9,7 +9,7 @@ import android.view.View;
 
 import com.geektech.geektech.authorization.PhoneActivity;
 import com.geektech.geektech.preferenceHelper.PreferenceHelper;
-import com.geektech.geektech.ui.admin.form_group.FormGroupFragment;
+import com.geektech.geektech.ui.admin.chat.form_group.FormGroupFragment;
 import com.geektech.geektech.variable_constants.User;
 import com.geektech.geektech.оnBoard.OnBoardActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name()))
             navController.navigate(R.id.navigation_chat, new Bundle(), navOptions);
+
+        navController.navigate(R.id.navigation_chat);
+
     }
 
     private void firebase() {

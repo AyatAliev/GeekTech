@@ -28,40 +28,18 @@ public class OnBoardFragment extends Fragment {
         TextView textViewTwo = view.findViewById(R.id.textViewTwo);
         ImageView imageView = view.findViewById(R.id.imageView);
 
-
         switch (pos) {
             case 0:
                 imageView.setImageResource(R.drawable.logo_geek_tech);
-                textViewEnd.setText(R.string.test);
-                textViewTwo.setText(R.string.test);
+                textViewEnd.setText("В данном приложении вы сможете легко находить Ментора! ");
                 break;
             case 1:
-                imageView.setImageResource(R.drawable.logo_geek_tech);
-                textViewEnd.setText(R.string.test);
-                textViewTwo.setText(R.string.test);
+                imageView.setImageResource(R.drawable.android);
+                textViewEnd.setText("Быстро находить свою группу и просмотреть свои уроки!");
                 break;
             case 2:
-                imageView.setImageResource(R.drawable.logo_geek_tech);
-                textViewEnd.setText(R.string.test);
-                textViewTwo.setText(R.string.test);
-                break;
-
-            case 3:
-                imageView.setImageResource(R.drawable.logo_geek_tech);
-                textViewEnd.setText(R.string.test);
-                textViewTwo.setText(R.string.test);
-                break;
-
-            case 4:
-                imageView.setImageResource(R.drawable.logo_geek_tech);
-                textViewEnd.setText(R.string.test);
-                textViewTwo.setText(R.string.test);
-                break;
-
-            case 5:
-                imageView.setImageResource(R.drawable.logo_geek_tech);
-                textViewEnd.setText(R.string.test);
-                textViewTwo.setText(R.string.test);
+                imageView.setImageResource(R.drawable.kotlin);
+                textViewEnd.setText("А самое главное оно направлено на легкое обучение как ученика так и для работы учителя!");
                 break;
         }
         return view;

@@ -91,7 +91,7 @@ public class PhoneActivity extends AppCompatActivity {
                     startActivity(new Intent(PhoneActivity.this, Splash.class));
                     finish();
                 } else {
-                    Toaster.show("Неверный код, попробуйте ещё раз!");
+                    Toaster.show("");
                 }
             }
         });

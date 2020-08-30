@@ -1,49 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.level.LevelFragment">
 
-    <Button
-        android:id="@+id/oneJava"
-        android:background="@drawable/button"
-        style="@style/ButtonMainO"
-        android:text="Java 1-Алексей" />
 
-    <Button
-        style="@style/ButtonMainO"
-        android:background="@drawable/button"
-        android:text="Java 2-Роза" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-    <Button
-        style="@style/ButtonMainO"
-        android:background="@drawable/button"
-        android:text="Android 1-Алтынай" />
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/java" />
 
-    <Button
-        style="@style/ButtonMainO"
-        android:background="@drawable/button"
-        android:text="Android 2-Данияр" />
-
-    <Button
-        style="@style/ButtonMainO"
-        android:id="@+id/threeA"
-        android:background="@drawable/button"
-        android:text="Android 3-Александр" />
+        <TextView
+            android:id="@+id/oneJava"
+            style="@style/TextViewInfoAppActivity"
+            android:text="Java 1-Алексей" />
 
 
-    <Button
-        style="@style/ButtonMainO"
-        android:background="@drawable/button"
-        android:text="Android 4-Эльбурс" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
 
-    <Button
-        style="@style/ButtonMainO"
-        android:background="@drawable/button"
-        android:text="Kotlin-Сергей" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/java" />
+
+        <TextView
+            style="@style/TextViewInfoAppActivity"
+            android:text="Java 2-Роза" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/android" />
+
+        <TextView
+            style="@style/TextViewInfoAppActivity"
+            android:text="Android 1-Алтынай" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+    Бакыт khamraev, [30.08.20 15:45]
+    <LinearLayout
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/android" />
+
+        <TextView
+            style="@style/TextViewInfoAppActivity"
+            android:text="Android 2-Данияр" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/android" />
+
+        <TextView
+            android:id="@+id/threeA"
+            style="@style/TextViewInfoAppActivity"
+            android:text="Android 3-Александр" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/android" />
+
+        <TextView
+            style="@style/TextViewInfoAppActivity"
+            android:text="Android 4-Эльбурс" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/LL_InfoAppActivity"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/kotlin" />
+
+        <TextView
+            style="@style/TextViewInfoAppActivity"
+            android:text="Kotlin-Сергей" />
+
+        Бакыт khamraev, [30.08.20 15:45]
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_navigate_next_24" />
+        </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#ECEAEA"
     android:orientation="vertical"
-    tools:context=".ui.admin.form_group.FormGroupFragment">
+    tools:context=".ui.admin.chat.form_group.FormGroupFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

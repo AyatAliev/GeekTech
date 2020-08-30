@@ -52,7 +52,7 @@ public class OnBoardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PreferenceHelper.getInstance(OnBoardActivity.this).setIsShow();
-                //startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
+                startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
                 finish();
             }
         });
@@ -79,14 +79,14 @@ public class OnBoardActivity extends AppCompatActivity {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
         } else {
             PreferenceHelper.getInstance(OnBoardActivity.this).setIsShow();
-            //startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
+            startActivity(new Intent(OnBoardActivity.this, MainActivity.class));
             finish();
         }
     }
 
 
     public class SectionPagerAdapter extends FragmentPagerAdapter {
-        public static final int PAGES_COUNT = 6;
+        public static final int PAGES_COUNT = 3;
 
         public SectionPagerAdapter(@NonNull FragmentManager fm) {
             super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);

@@ -58,7 +58,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/formGroupFragment"
-        android:name="com.geektech.geektech.ui.admin.form_group.FormGroupFragment"
+        android:name="com.geektech.geektech.ui.admin.chat.form_group.FormGroupFragment"
         android:label="fragment_form_group"
         tools:layout="@layout/fragment_form_group" />
 

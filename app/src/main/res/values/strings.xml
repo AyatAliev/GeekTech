@@ -76,16 +76,20 @@
     </string>
 
 
+    <string name="account">Аккаунт</string>
+    <string name="a">Aят Алиев</string>
+    <string name="click_to_change_name">Редактировать имя</string>
+    <string name="group">Группа</string>
+    <string name="lack_of_concentration"> Нехватка концентрации</string>
+
+
+
+
     <string name="student_name_example">Аят Алиев</string>
     <string name="info">info</string>
-    <string name="account">Account</string>
-    <string name="a">Aят Алиев</string>
-    <string name="click_to_change_name">click to change name</string>
     <string name="gicCoins">Гикоины:</string>
     <string name="gicCoin">За помощь:</string>
-    <string name="group">group</string>
     <string name="coin">4</string>
-    <string name="lack_of_concentration">lack of concentration</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="edit_fragment_description_example">Lorem Ipsum is simply dummy text of the printing and typesetting industry.

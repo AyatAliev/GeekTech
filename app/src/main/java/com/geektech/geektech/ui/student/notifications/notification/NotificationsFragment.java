@@ -54,7 +54,7 @@ public class NotificationsFragment extends Fragment implements Contract.View {
         presenter = new Presenter(this);
         linearLayoutEditName = view.findViewById(R.id.linear_layout_edit_student_name);
         linearLayoutEditGroup = view.findViewById(R.id.linear_layout_edit_student_group);
-        textView = view.findViewById(R.id.tv_test);
+        //textView = view.findViewById(R.id.tv_test);
     }
 
     @Override
