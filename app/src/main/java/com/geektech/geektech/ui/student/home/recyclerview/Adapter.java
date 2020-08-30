@@ -15,10 +15,20 @@ import com.geektech.geektech.ui.student.home.OnClickHolder;
 import com.geektech.geektech.ui.model.Group;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
     private ArrayList<Group> list = new ArrayList<>();
     OnClickHolder onClickHolder;
+
+    public ArrayList<Group> getList() {
+        return list;
+    }
+
+    public void addAll(List<Group> groups){
+        list.addAll(groups);
+        notifyDataSetChanged();
+    }
 
     public Adapter(OnClickHolder onClickHolder) {
         this.onClickHolder = onClickHolder;
@@ -28,7 +38,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
     }
 
     public void update(Group group) {
-        list.add(group);
+        list.add(0, group);
         notifyDataSetChanged();
     }
 
@@ -65,8 +75,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         }
 
         public void onBind(final Group s) {
-            if (s.getImageView() != null) {
-                Glide.with(imageView).load(s.getImageView()).into(imageView);
+            if (s.getImageUri() != null) {
+                Glide.with(imageView).load(s.getImageUri()).into(imageView);
             }
             if (s.getTitle() != null) {
                 textView.setText(s.getTitle());

@@ -2,6 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/navigation_network"
+        android:icon="@drawable/ic_baseline_language_24"
+        android:title="@string/network" />
+    <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
@@ -19,6 +23,8 @@
         android:id="@+id/navigation_test_app"
         android:icon="@drawable/ic_test_app_icon"
         android:title="@string/test_app" />
+
+
 
 
 </menu>

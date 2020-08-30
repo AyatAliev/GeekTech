@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.admin;
+package com.geektech.geektech.ui.admin.profile;
 
 import android.os.Bundle;
 

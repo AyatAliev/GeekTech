@@ -99,4 +99,37 @@
         including versions of Lorem Ipsum.</string>
     <string name="save">save</string>
     <string name="group_1">Group 1</string>
+    <string name="enter_group_name">enter group name&#8230;</string>
+    <string name="enter_sensei_name">enter sensei name&#8230;</string>
+    <string name="students">Students</string>
+    <string name="topics">topics</string>
+    <string name="crate_group">crate group</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_chat">Groups</string>
+    <string name="network">Network</string>
+
+
+    <string-array name="tabs_network">
+        <item>Hubr</item>
+        <item>Android Docs</item>
+    </string-array>
+
+    <string-array name="tabs_network_content">
+        <item>https://habr.com/ru/</item>
+        <item>https://developer.android.com/guide</item>
+    </string-array>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

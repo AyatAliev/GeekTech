@@ -1,4 +1,4 @@
-package com.geektech.geektech.ui.admin;
+package com.geektech.geektech.ui.admin.chat;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -23,14 +25,19 @@ import com.geektech.geektech.ui.student.home.recyclerview.Adapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.List;
 import java.util.Objects;
 
 public class ChatFragment extends Fragment implements OnClickHolder {
     RecyclerView recyclerView;
     FloatingActionButton fab;
+    NavController navController;
+    Adapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,38 +51,45 @@ public class ChatFragment extends Fragment implements OnClickHolder {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.recyclerview);
         fab = view.findViewById(R.id.fab);
-        Adapter adapter = new Adapter(this);
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+        adapter = new Adapter(this);
         recyclerView.setAdapter(adapter);
 
-        adapter.update(new Group("title"));
+        uploadData();
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                navController.navigate(R.id.formGroupFragment);
             }
         });
     }
 
-    @Override
-    public void click(int s, Group group) {
-        Log.e("ololo", "click: " + "click");
-        saveToFireStore(group);
-    }
-
-    private void saveToFireStore(Group group) {
+    private void uploadData() {
         FirebaseFirestore
                 .getInstance()
                 .collection("group")
-                .add(group)
-                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                     @Override
-                    public void onComplete(@NonNull Task<DocumentReference> task) {
-                        if(task.isSuccessful()){
-                            Log.e("ololo", "onComplete: " + task.toString());
-                        } else {
-                            Log.e("ololo", "onComplete: ", task.getException());
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful())
+                            for (Group group : Objects.requireNonNull(task.getResult()).toObjects(Group.class)) {
+                                adapter.update(group);
+                            }
+                        else {
+                            Log.e("ololo", "onComplete: isSuccessful = false", task.getException() );
                         }
                     }
                 });
     }
+
+    @Override
+    public void click(int s, Group group) {
+        Log.e("ololo", "click: click group");
+        navController.navigate(R.id.groupInfoFragment);
+    }
+
+
 }

@@ -27,4 +27,9 @@ public class Presenter implements Contract.Presenter {
         bundle.putString(KEY_EDIT_FRAGMENT_ARGUMENTS, "1\n" + mModel.loadMessage());
         mView.openEditFragment(bundle);
     }
+
+    @Override
+    public void onTextViewWebViewWasClicked() {
+        mView.openTestFragment();
+    }
 }

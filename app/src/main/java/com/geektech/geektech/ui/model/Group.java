@@ -1,24 +1,40 @@
 package com.geektech.geektech.ui.model;
 
-import android.net.Uri;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Group implements Serializable {
-    private Uri imageView;
+    private String id;
+    private String title;
+    private String imageUri;
+    private String sensei;
+    private List<Student> students;
 
     public Group() { }
 
-    public Group(String title) {
+    public Group(String title, String imageUri, String sensei, List<Student> students) {
         this.title = title;
+        this.imageUri = imageUri;
+        this.sensei = sensei;
+        this.students = students;
     }
 
-    public Uri getImageView() {
-        return imageView;
+
+    public String getId() {
+        return id;
     }
 
-    public void setImageView(Uri imageView) {
-        this.imageView = imageView;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageView(String imageUrl) {
+        this.imageUri = imageUrl;
     }
 
     public String getTitle() {
@@ -29,5 +45,24 @@ public class Group implements Serializable {
         this.title = title;
     }
 
-    private String title;
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
+    }
+
+    public String getSensei() {
+        return sensei;
+    }
+
+    public void setSensei(String sensei) {
+        this.sensei = sensei;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
 }
