@@ -12,19 +12,30 @@
             android:id="@+id/item_image_view"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/logo_geek" />
 
         <TextView
-            android:background="@android:color/white"
+            android:textColor="#fff"
             android:id="@+id/item_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
             android:text="@string/group_1"
+            android:elevation="1dp"
             android:textSize="32sp"
-            android:layout_marginBottom="10dp"/>
+            />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="#002147"
+            android:textStyle="bold"
+            android:layout_marginTop="110dp"
+            />
 
     </androidx.cardview.widget.CardView>
+
+
 
 
 </LinearLayout>

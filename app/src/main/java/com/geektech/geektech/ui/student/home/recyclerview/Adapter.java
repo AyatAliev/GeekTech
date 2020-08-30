@@ -1,5 +1,6 @@
 package com.geektech.geektech.ui.student.home.recyclerview;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,16 +26,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         return list;
     }
 
-    public void addAll(List<Group> groups){
-        list.addAll(groups);
+    public void addAll(ArrayList<String> list){
+        list.addAll(list);
         notifyDataSetChanged();
     }
 
     public Adapter(OnClickHolder onClickHolder) {
         this.onClickHolder = onClickHolder;
-        Group g = new Group();
-        g.setTitle("ayat");
-        list.add(g);
     }
 
     public void update(Group group) {
@@ -76,7 +74,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
 
         public void onBind(final Group s) {
             if (s.getImageUri() != null) {
-                Glide.with(imageView).load(s.getImageUri()).into(imageView);
+                Glide.with(itemView.getContext()).load(s.getImageUri()).into(imageView);
+                Log.e("ololo", "onBind: " + s.getImageUri() );
+
             }
             if (s.getTitle() != null) {
                 textView.setText(s.getTitle());

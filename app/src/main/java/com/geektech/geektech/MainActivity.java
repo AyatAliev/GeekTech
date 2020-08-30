@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -20,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -28,11 +30,14 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     BottomNavigationView navView;
     AppBarConfiguration appBarConfiguration;
     NavOptions navOptions;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         firebase();
-
+        searchView = findViewById(R.id.action_search);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         BottomNavigationView navView;
         AppBarConfiguration appBarConfiguration;
 
-        if (PreferenceHelper.getInstance(this).user().equals(User.STUDENT.name())){
+        if (PreferenceHelper.getInstance(this).user().equals(User.STUDENT.name())) {
             navView = findViewById(R.id.nav_view_student);
             appBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
@@ -74,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        if(PreferenceHelper.getInstance(this).user().equals(User.NO_USER.name()))
+        if (PreferenceHelper.getInstance(this).user().equals(User.NO_USER.name()))
             navController.navigate(R.id.studentOrAdminFragment);
 
         if (PreferenceHelper.getInstance(this).user().equals(User.ADMIN.name()))
@@ -100,12 +105,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.toolbar_serach_menu, menu);
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
             return true;
+        }
+        if (item.getItemId() == R.id.action_search) {
+
         }
         return true;
     }

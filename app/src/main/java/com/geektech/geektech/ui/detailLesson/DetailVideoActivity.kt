@@ -25,7 +25,7 @@ class DetailVideoActivity : AppCompatActivity(), CallBacks {
     private var listOfFormatVideo = mutableListOf<YoutubeVideo>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
+        setContentView(R.layout.activity_main2)
         setupToSubscribe()
         setupExoPlayer()
     }
